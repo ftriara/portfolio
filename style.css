@@ -30,13 +30,13 @@ nav {
 }
 
 .logo {
-    padding: 10px;
+    padding: 5px 0 5px 10px;
     text-align: center;
 }
 
 .logo img {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
 }
 
 .nav-links {
