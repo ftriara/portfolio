@@ -286,16 +286,15 @@ main h1 {
 }
 
 main figure {
-    padding-left: 15px;
+    padding: 0 5.8vw;
     float: inline-start;
     width: 100vw;
     height: auto;
-    align-items: center;
 }
 
 main figure img {
-    width: 20vw;
-    height: 30vw;
+    width: 25vw;
+    height: 35vw;
     border-radius: 15px;
     float: left;
     align-items: center;
@@ -319,6 +318,7 @@ footer {
     background-color: #092a44;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    bottom: 0;
 }
 
 .contact a {
