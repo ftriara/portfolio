@@ -15,14 +15,14 @@ body {
 }
 
 nav {
-    width: 100%;
+    width: 100vw;
     height: 70px;
     font-size: 1.5rem;
     font-weight: bold;
     transition: 1s;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     display: flex;
     float: left;
     position: fixed;
@@ -92,69 +92,6 @@ nav {
     display: none;
 }
 
-@media screen and (max-width: 1000px) {
-    nav {
-        position: fixed;
-        z-index: 3;
-    }
-
-    .stack {
-        display: block;
-        position: absolute;
-        cursor: pointer;
-        right: 5%;
-        top: 50%;
-        transform: translate(-5%, -50%);
-        z-index: 2;
-        transition: all 0.7 ease;
-    }
-
-    .nav-links {
-        position: fixed;
-        background: #72b7e3;
-        height: 100vh;
-        width: 100%;
-        flex-direction: column;
-        clip-path: circle(50px at 90% -20%);
-        -webkit-clip-path: circle(50px at 90% -10%);
-        transition: all 1s ease-out;
-        justify-content: center;
-        font-size: 2rem;
-        margin: 0;
-    }
-
-    .nav-links.open {
-        clip-path: circle(4000px at 90% -10%);
-        -webkit-clip-path: circle(4000px at 90% -10%);
-        opacity: 93%;
-    }
-
-    .nav-links li {
-        margin: 2vw;
-    }
-
-    .nav-links li a::before {
-        margin-top: 55px;
-        background-color: #092a44;
-    }
-
-    .nav-links li:nth-child(1) {
-        transition: all 0.5s ease 0.2s;
-    }
-
-    .nav-links li:nth-child(2) {
-        transition: all 0.5s ease 0.4s;
-    }
-
-    .nav-links li:nth-child(3) {
-        transition: all 0.5s ease 0.6s;
-    }
-
-    .nav-links li:nth-child(4) {
-        transition: all 0.5s ease 0.8s;
-    }
-}
-
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -206,9 +143,14 @@ header {
 }
 
 .item img {
-    margin-left: 8vw;
-    width: 15vw;
-    height: 15vw;
+    margin-left: 9vw;
+    width: 13vw;
+    height: 13vw;
+    transition: transform 0.3s ease-in-out;
+}
+
+.item img:hover {
+    transform: scale(1.2);
 }
 
 .description {
@@ -216,7 +158,7 @@ header {
     text-align: center;
 }
 
-.description a {
+.description h2 {
     font-weight: bold;
     font-size: 1.5rem;
     text-decoration: none;
@@ -228,21 +170,21 @@ header {
 }
 
 #skills {
-    padding-top: 3vw;
+    padding-top: 3rem;
     color: #092a44;
 }
 
 #skills figure {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
+    text-align: center;
+    margin-bottom: 7rem;
 }
 
 #skills img {
-    width: 12vw;
+    width: 9rem;
     height: fit-content;
-    margin: 0 20px;
+    margin: 1.5vw 2vw;
     display: inline;
+    overflow:hidden;
 }
 
 .card {
@@ -250,10 +192,9 @@ header {
 }
 
 .carousel-item img {
-    padding: 1vw 4vw 2vw 4vw;
-    width: 60vw;
-    height: 50vw;
+    padding: 1vw 4vw 2vw;
     border-radius: 8vw;
+    height: 45rem;
 }
 
 .card-body {
@@ -270,9 +211,9 @@ header {
     font-size: 1.1rem;
 }
 
-.card-body a {
+.btn {
     background-color: #092a44;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 main h1 {
@@ -280,25 +221,41 @@ main h1 {
     margin-bottom: 30px;
     text-align: center;
     font-family: 'Lucida Handwriting', 'Brush Script MT', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 900;
     color: #092a44;
 }
 
-main figure {
-    padding: 0 5.8vw;
-    float: inline-start;
-    width: 100vw;
-    height: auto;
+.design {
+    text-align: center;
 }
 
-main figure img {
+.design img {
+    max-width: 45vw;
+    height: 35vw;
+    border-radius: 15px;
+    margin: 20px;
+    opacity: 0;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.design img.show {
+    transform: scale(1.2);
+}
+
+.photograph {
+    text-align: center;
+}
+
+.photograph img {
     width: 25vw;
     height: 35vw;
     border-radius: 15px;
-    float: left;
-    align-items: center;
     margin: 20px;
+    opacity: 0;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 #scrollTopButton {
@@ -313,6 +270,7 @@ main figure img {
 footer {
     width: 100%;
     color: #fff;
+    margin-top: 50px;
     padding: 30px 0 10px 0;
     text-align: center;
     background-color: #092a44;
@@ -323,4 +281,62 @@ footer {
 
 .contact a {
     text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+
+    .stack {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7 ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: #72b7e3;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .nav-links.open {
+        clip-path: circle(4000px at 90% -10%);
+        -webkit-clip-path: circle(4000px at 90% -10%);
+        opacity: 93%;
+    }
+
+    .nav-links li {
+        margin: 2vw;
+    }
+
+    .nav-links li a::before {
+        margin-top: 55px;
+        background-color: #092a44;
+    }
 }
