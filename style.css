@@ -180,9 +180,9 @@ header {
 }
 
 #skills img {
-    width: 9rem;
+    width: 7rem;
     height: fit-content;
-    margin: 1.5vw 2vw;
+    margin: 1.5rem 1.4rem;
     display: inline;
     overflow:hidden;
 }
