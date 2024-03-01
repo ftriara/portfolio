@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const texts = ['an informatics student', 'data enthusiast', 'photography enjoyer'];
+  const texts = ['a computer science student', 'data enthusiast', 'photography enjoyer'];
 
   let count = 0; // Menghitung indeks array
   let index = 0; // Menghitung indeks karakter pada setiap teks
