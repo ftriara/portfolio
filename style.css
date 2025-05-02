@@ -482,9 +482,9 @@ footer {
     }
 
     .nav-links.open {
-        clip-path: circle(50rem at 90% -10%);
+        clip-path: circle(80rem at 90% -10%);
         opacity: 0.95;
-        -webkit-clip-path: circle(50rem at 90% -10%);
+        -webkit-clip-path: circle(80rem at 90% -10%);
     }
 
     .nav-links li {
@@ -648,6 +648,7 @@ footer {
     .btn-primary {
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
+        margin-bottom: 1rem;
     }
 
     /** FOOTER **/
