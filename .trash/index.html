@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Fitria Rahmadani - Photography</title>
+<head>
+    <title>Fitria Rahmadani</title>
     <meta charset="UTF-8">
     <link rel="icon" href="/assets/logo.png">
     <!--CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/style.css">
     <!--Javascript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="/script.js"></script>
 </head>
 <body>
     <nav id="navbar">
         <a href="/" class="logo">
-          <img src="/assets/logo.png" alt="">
+          <img src="/assets/logo.png" alt="Website Logo">
         </a>
+        <!-- Hamburger Menu Button -->
         <div class="stack">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
         <ul class="nav-links">
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#interest">Interest</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#interest">Interest</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Projects
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/data-science/">Data Science & Analytics</a></li>
+              <li><a class="dropdown-item" href="/web-dev/">Web Development</a></li>
+            </ul>
+          </li>
         </ul>
     </nav>
 
