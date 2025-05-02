@@ -20,15 +20,6 @@ body {
     height: 100%;
 }
 
-main h1 {
-    margin-top: 6.5rem;
-    text-align: center;
-    font-family: 'Lucida Handwriting', 'Brush Script MT', cursive;
-    font-size: 3rem;
-    font-weight: 900;
-    color: #092a44;
-}
-
 /* ===== NAVIGATION ===== */
 nav {
     background: #fff;
@@ -178,7 +169,13 @@ header {
     padding: 10rem 0;
 }
 
-#desc {
+.about h1 {
+    font-family: 'Lucida Handwriting', 'Brush Script MT', cursive;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.about #desc {
     font-size: 2rem;
     border-right: 3px solid #000;
     white-space: nowrap;
@@ -201,7 +198,7 @@ header {
     font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 3rem 0 2rem;
 }
   
 .interest-grid {
@@ -291,7 +288,7 @@ header {
     font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 6rem 0 3rem;
 }
   
 .skills-grid {
@@ -362,13 +359,21 @@ header {
 } */
 
 /* ===== PROJECTS PAGE ===== */
+.data-title h1 {
+    margin: 6.5rem 0 2rem;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #092a44;
+    font-family:'Courier New', Courier, monospace
+}
+
 .data {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
     flex-wrap: wrap;
-    margin: 1rem 0;
 }
 
 .data .card {
@@ -461,7 +466,7 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    /* Mobile menu container */
+    /* NAVIGATION */
     .nav-links {
         background: #72b7e3;
         clip-path: circle(50px at 90% -10%);
@@ -477,19 +482,18 @@ footer {
     }
 
     .nav-links.open {
-        clip-path: circle(4000px at 90% -10%);
+        clip-path: circle(50rem at 90% -10%);
         opacity: 0.95;
-        -webkit-clip-path: circle(4000px at 90% -10%);
+        -webkit-clip-path: circle(50rem at 90% -10%);
     }
 
     .nav-links li {
-        margin: 2vw;
-        width: 100%;
+        margin: 0.25rem;
         text-align: center;
     }
 
     .nav-links li a {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         color: #092a44;
     }
 
@@ -506,9 +510,8 @@ footer {
         color: #092a44 !important;
     }
 
-    /* Mobile dropdown menu */
+    /* DROPDOWN */
     .dropdown {
-        width: 100%;
         text-align: center;
     }
       
@@ -521,7 +524,7 @@ footer {
     .dropdown-menu {
         position: relative;
         display: block;
-        width: 500px;
+        width: 3.5rem;
         left: 50%;
         background: rgba(255,255,255,0.2) !important;
         border-radius: 10px;
@@ -535,9 +538,9 @@ footer {
 
     .dropdown-item {
         display: block;
-        padding: 12px 0;
+        padding: 1rem 0;
         color: #092a44;
-        font-size: 1.2rem;
+        font-size: 1rem;
         border-top: 1px solid rgba(9, 42, 68, 0.2);
     }
       
@@ -545,6 +548,26 @@ footer {
         border-top: none;
     }
 
+    /* ABOUT */
+    .about {
+        text-align: center;
+        padding: 10rem 0;
+    }
+
+    .about h1 {
+        font-size: 3rem;
+    }
+    
+    .about #desc {
+        font-size: 1.2rem;
+    }
+
+    /* INTEREST */
+    #interest h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
     .interest-grid {
         grid-template-columns: 1fr;
     }
@@ -554,29 +577,36 @@ footer {
     }
   
     .description {
-        padding: 3vw;
-        text-align: center;
+        padding: 0.5rem;
     }
   
     .description h2 {
-        font-weight: bold;
         font-size: 1.3rem;
-        text-decoration: none;
-        color: #092a44;
     }
   
     .description p {
         font-size: 0.9rem;
     }
 
+    /* SKILLS */
+    #skills {
+        padding: 0;
+        margin: 0;
+    }
+      
+    #skills h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
     .skill-row {
         grid-template-columns: 1fr;
         gap: 1rem;
+        padding: 0 3rem;
     }
       
     .skill-category h2 {
-        text-align: center;
-        padding-right: 0;
+        font-size: 1.3rem;
         margin-bottom: 1rem;
     }
       
@@ -585,7 +615,53 @@ footer {
     }
       
     .skill-icons img {
-        width: 4rem;
+        width: 3rem;
+    }
+
+    /** PROJECTS **/
+    .data-title h1 {
+        margin: 6.5rem 1rem 2rem;
+        font-size: 1.8rem;
+    }
+
+    .data {
+        padding: 0 1.5rem;
+    }
+    
+    .data .card {
+        width: 20rem;
+    }
+    
+    .data .card-body {
+        padding: 1rem;
+    }
+    
+    .data .card-title {
+        font-size: 1.1rem;
+        font-weight: 800;
+    }
+    
+    .data .card-text {
+        font-size: 0.8rem;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    /** FOOTER **/
+    footer {
+        padding: 15px 0 10px 0;
+    }
+    
+    .contact a {
+        text-decoration: none;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 0.5rem;
     }
 
     @keyframes fadeInDown {

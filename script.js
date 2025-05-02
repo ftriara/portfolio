@@ -1,48 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // ===== TYPING ANIMATION =====
-  const texts = ['a computer science student', 'a data enthusiast'];
-  let count = 0;
-  let index = 0;
-  let currentText = '';
-  let letter = '';
-
-  function typeFunc() {
-    if (count === texts.length) count = 0;
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-    document.getElementById('desc').textContent = letter;
-    
-    if (letter.length === currentText.length) {
-      count++;
-      index = 0;
+  // ===== TYPING ANIMATION (Hanya jika elemen ada) =====
+  const descElement = document.getElementById('desc');
+  if (descElement) {
+    const texts = ['a computer science student', 'a data enthusiast'];
+    let count = 0;
+    let index = 0;
+    function typeFunc() {
+      if (count === texts.length) count = 0;
+      const currentText = texts[count];
+      descElement.textContent = currentText.slice(0, ++index);
+      if (index === currentText.length) {
+        count++;
+        index = 0;
+      }
+      setTimeout(typeFunc, 200);
     }
-    setTimeout(typeFunc, 200);
+    typeFunc();
   }
 
   // ===== NAVIGATION EFFECTS =====
   function handleScroll() {
     const navbar = document.querySelector("nav");
-    const stackLines = document.querySelectorAll('.stack div');
-    const shouldAddClass = window.scrollY > 700;
+    if (!navbar) return;
     
+    const shouldAddClass = window.scrollY > 700;
     navbar.classList.toggle('scrolled', shouldAddClass);
     
-    // Change hamburger color when scrolled
-    if (shouldAddClass) {
+    // Hamburger color (jika ada)
+    const stackLines = document.querySelectorAll('.stack div');
+    if (stackLines.length > 0) {
       stackLines.forEach(line => {
-        line.style.background = '#fff';
-      });
-    } else {
-      stackLines.forEach(line => {
-        line.style.background = '#092a44';
+        line.style.background = shouldAddClass ? '#fff' : '#092a44';
       });
     }
   }
 
  // ===== MOBILE MENU TOGGLE =====
-  function setupMobileMenu() {
+ function setupMobileMenu() {
     const stack = document.querySelector(".stack");
     const navLinks = document.querySelector(".nav-links");
+    if (!stack || !navLinks) return;
     const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
     
     // Toggle mobile menu
@@ -155,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ===== INITIALIZE EVERYTHING =====
-  typeFunc();
   setupMobileMenu();
   setupDesktopDropdowns();
   window.addEventListener('scroll', handleScroll);
